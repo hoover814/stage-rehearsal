@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/stage-rehearsal/static/css/main.67f08755.css",
-    "main.js": "/stage-rehearsal/static/js/main.67a911dc.js",
+    "main.css": "/stage-rehearsal/static/css/main.dddbf801.css",
+    "main.js": "/stage-rehearsal/static/js/main.dcf339ba.js",
     "index.html": "/stage-rehearsal/index.html",
-    "main.67f08755.css.map": "/stage-rehearsal/static/css/main.67f08755.css.map",
-    "main.67a911dc.js.map": "/stage-rehearsal/static/js/main.67a911dc.js.map"
+    "main.dddbf801.css.map": "/stage-rehearsal/static/css/main.dddbf801.css.map",
+    "main.dcf339ba.js.map": "/stage-rehearsal/static/js/main.dcf339ba.js.map"
   },
   "entrypoints": [
-    "static/css/main.67f08755.css",
-    "static/js/main.67a911dc.js"
+    "static/css/main.dddbf801.css",
+    "static/js/main.dcf339ba.js"
   ]
 }
