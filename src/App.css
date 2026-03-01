@@ -592,6 +592,72 @@ button { cursor: pointer; font-family: inherit; }
 .sl-text { font-size: 0.88rem; color: var(--parchment); line-height: 1.5; }
 .sl-stage { font-size: 0.82rem; color: var(--parchment); font-style: italic; opacity: 0.6; width: 100%; }
 
+/* ── Hide/show toggle button ── */
+.hide-toggle-btn {
+  padding: 7px 14px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: var(--parchment);
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+.hide-toggle-btn:hover { background: rgba(255,255,255,0.14); }
+.hide-toggle-btn--on {
+  background: rgba(212,168,67,0.2);
+  border-color: var(--gold);
+  color: var(--gold-light);
+}
+
+/* ── Hidden line ── */
+.hidden-line-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 0;
+}
+.hidden-line-blur {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  letter-spacing: 0.1em;
+  text-align: center;
+  filter: blur(6px);
+  user-select: none;
+  padding: 10px 20px;
+  background: rgba(212,168,67,0.1);
+  border-radius: 10px;
+  width: 100%;
+}
+.reveal-btn {
+  padding: 10px 24px;
+  border-radius: 24px;
+  background: rgba(212,168,67,0.15);
+  border: 1.5px solid var(--gold);
+  color: var(--gold-light);
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.reveal-btn:hover {
+  background: rgba(212,168,67,0.28);
+  transform: scale(1.04);
+}
+.peeked-label {
+  margin-top: 8px;
+  font-size: 0.78rem;
+  color: var(--gold);
+  opacity: 0.7;
+  text-align: center;
+}
+
 /* ── Responsive ── */
 @media (max-width: 600px) {
   .character-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }

@@ -168,6 +168,8 @@ function RehearsalPlayer({ myRole, sceneNumber, onBack }) {
   const [pauseSeconds, setPauseSeconds] = useState(5);
   const [countdown, setCountdown] = useState(null);
   const [showAllLines, setShowAllLines] = useState(false);
+  const [hideMyLines, setHideMyLines] = useState(false);
+  const [lineRevealed, setLineRevealed] = useState(false);
   const timerRef = useRef(null);
   const countdownRef = useRef(null);
   const runningRef = useRef(false);
@@ -192,6 +194,7 @@ function RehearsalPlayer({ myRole, sceneNumber, onBack }) {
         block: "center",
       });
     }
+    setLineRevealed(false);
   }, [currentIdx]);
 
   const stopAll = useCallback(() => {
@@ -326,6 +329,13 @@ function RehearsalPlayer({ myRole, sceneNumber, onBack }) {
           />
           <span>{pauseSeconds}s</span>
         </div>
+        <button
+          className={`hide-toggle-btn ${hideMyLines ? "hide-toggle-btn--on" : ""}`}
+          onClick={() => setHideMyLines(v => !v)}
+          title="Hide my lines during rehearsal"
+        >
+          {hideMyLines ? "🙈 Lines Hidden" : "👁 Lines Visible"}
+        </button>
       </div>
 
       {/* Progress bar */}
@@ -378,7 +388,21 @@ function RehearsalPlayer({ myRole, sceneNumber, onBack }) {
                   <div className="spotlight__who my-turn-label">
                     ⭐ YOUR LINE — {myRole} {characterEmoji[myRole] || ""}
                   </div>
-                  <div className="spotlight__text spotlight__text--me">{currentLine.text}</div>
+                  {hideMyLines && !lineRevealed ? (
+                    <div className="hidden-line-wrap">
+                      <div className="hidden-line-blur">Say your line!</div>
+                      <button className="reveal-btn" onClick={() => setLineRevealed(true)}>
+                        👁 Peek at line
+                      </button>
+                    </div>
+                  ) : (
+                    <>
+                      <div className="spotlight__text spotlight__text--me">{currentLine.text}</div>
+                      {hideMyLines && lineRevealed && (
+                        <div className="peeked-label">👁 Peeked!</div>
+                      )}
+                    </>
+                  )}
                   {countdown !== null && (
                     <div className="countdown-ring">
                       <span className="countdown-num">{countdown}</span>
