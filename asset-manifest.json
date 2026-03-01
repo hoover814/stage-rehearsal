@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/stage-rehearsal/static/css/main.67f08755.css",
+    "main.js": "/stage-rehearsal/static/js/main.723a107f.js",
+    "index.html": "/stage-rehearsal/index.html",
+    "main.67f08755.css.map": "/stage-rehearsal/static/css/main.67f08755.css.map",
+    "main.723a107f.js.map": "/stage-rehearsal/static/js/main.723a107f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.67f08755.css",
+    "static/js/main.723a107f.js"
+  ]
+}
